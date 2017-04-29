@@ -29,31 +29,31 @@
                 <tbody>
                   <tr>
                     <td>Birthday</td>
-                    <td>03/04/1990</td>
+                    <td>{{user.birthday}}</td>
                   </tr>
                   <tr>
                     <td>Sex</td>
-                    <td>Male</td>
+                    <td>{{user.sex}}</td>
                   </tr>
                   <tr>
                     <td>Country</td>
-                    <td>Spain</td>
+                    <td>{{user.country}}</td>
                   </tr>
                   <tr>
                     <td>Native Language</td>
-                    <td>Spanish</td>
+                    <td>{{user.nat_lang}}</td>
                   </tr>
                   <tr>
                     <td>Language I want to learn</td>
-                    <td>German</td>
+                    <td>{{user.lang_learn}}</td>
                   </tr>
                   <tr>
                     <td>Skype</td>
-                    <td>asdasd@asd.com</td>
+                    <td>{{user.skype}}</td>
                   </tr>
                   <tr>
                     <td>Occupation</td>
-                    <td>Student</td>
+                    <td>{{user.occupation}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -75,45 +75,33 @@
               <br>
               <div class="tab-content">
                 <div id="literature" class="tab-pane fade">
-                  <ul>
-                    <li>Tales</li>
-                    <li>Terror</li>
-                    <li>Comic</li>
+                  <ul *ngFor="let l of user.literature" >
+                    <li *ngIf="l.isChecked == true">{{l.name}}</li>
                   </ul>
                 </div>
                 <div id="music" class="tab-pane fade">
-                  <ul>
-                    <li>Pop</li>
-                    <li>Rap</li>
-                    <li>Rock</li>
+                  <ul  *ngFor="let m of user.music">
+                    <li *ngIf="m.isChecked == true">{{m.name}}</li>
                   </ul>
                 </div>
                 <div id="films" class="tab-pane fade">
-                  <ul>
-                    <li>Drama</li>
-                    <li>Animation</li>
-                    <li>Thriller</li>
+                  <ul *ngFor="let f of user.films">
+                    <li *ngIf="f.isChecked == true">{{f.name}}</li>
                   </ul>
                 </div>
                 <div id="series" class="tab-pane fade">
-                  <ul>
-                    <li>Breaking bad</li>
-                    <li>The walking dead</li>
-                    <li>House</li>
+                  <ul *ngFor="let s of user.series">
+                    <li *ngIf="s.isChecked == true">{{s.name}}</li>
                   </ul>
                 </div>
                 <div id="sports" class="tab-pane fade">
-                  <ul>
-                    <li>Football</li>
-                    <li>Basketball</li>
-                    <li>Tennis</li>
+                  <ul *ngFor="let s of user.sports">
+                    <li *ngIf="s.isChecked == true">{{s.name}}</li>
                   </ul>
                 </div>
                 <div id="activities" class="tab-pane fade">
-                  <ul>
-                    <li>Science</li>
-                    <li>Sports</li>
-                    <li>Astronomy</li>
+                  <ul *ngFor="let a of user.activities">
+                    <li *ngIf="a.isChecked == true">{{a.name}}</li>
                   </ul>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../../User';
+import { AuthHttp } from 'angular2-jwt'
 import { Router } from '@angular/router'
 
 @Component({
@@ -33,7 +34,7 @@ export class UsersComponent implements OnInit {
 
   gotoProfile(): void {
     const id = "_id";
-    this.router.navigate(['/profile', this.currentUser[id]]);
+    this.router.navigate(['/template/profile', this.currentUser[id]]);
   }
   
 }

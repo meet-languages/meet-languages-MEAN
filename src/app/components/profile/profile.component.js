@@ -29,7 +29,7 @@ var ProfileComponent = (function () {
     };
     ProfileComponent.prototype.gotoEditProfile = function () {
         var id = "_id";
-        this.router.navigate(['/edit-profile', this.user[id]]);
+        this.router.navigate(['/template/edit-profile', this.user[id]]);
     };
     return ProfileComponent;
 }());

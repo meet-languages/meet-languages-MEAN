@@ -71,7 +71,7 @@
                     <div class="text-center">
                         <h2>Login</h2>
                     </div>
-                    <form class="form-horizontal" action="http://localhost:4000/sessions" method="POST">
+                     <form class="form-horizontal" (ngSubmit)="onSubmit()" method="POST">
                         <div class="form-group">
                             <label class="control-label col-sm-3" for="email">Email:</label>
                             <div class="col-sm-8">
