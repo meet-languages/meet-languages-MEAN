@@ -7,16 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var profile_component_1 = require("./components/profile/profile.component");
 var registry_component_1 = require("./components/registry/registry.component");
 var users_component_1 = require("./components/users/users.component");
+var profile_component_1 = require("./components/profile/profile.component");
+var main_component_1 = require("./components/template/main.component");
 var edit_profile_component_1 = require("./components/edit-profile/edit-profile.component");
-var routes = [
-    { path: '', redirectTo: '/users', pathMatch: 'full' },
-    { path: 'users', component: users_component_1.UsersComponent },
-    { path: 'profile/:id', component: profile_component_1.ProfileComponent },
-    { path: 'edit-profile/:id', component: edit_profile_component_1.EditProfileComponent },
+exports.routes = [
+    { path: '', redirectTo: 'registry', pathMatch: 'full' },
     { path: 'registry', component: registry_component_1.RegistryComponent },
+    { path: 'template', component: main_component_1.TemplateComponent, children: [
+            { path: '', redirectTo: 'users', pathMatch: 'full' },
+            { path: 'users', component: users_component_1.UsersComponent },
+            { path: 'profile/:id', component: profile_component_1.ProfileComponent },
+            { path: 'edit-profile/:id', component: edit_profile_component_1.EditProfileComponent },
+        ] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -25,7 +29,7 @@ var AppRoutingModule = (function () {
 }());
 AppRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(routes)],
+        imports: [router_1.RouterModule.forRoot(exports.routes)],
         exports: [router_1.RouterModule]
     })
 ], AppRoutingModule);

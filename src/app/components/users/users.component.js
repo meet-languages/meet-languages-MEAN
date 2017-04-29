@@ -28,7 +28,7 @@ var UsersComponent = (function () {
     };
     UsersComponent.prototype.gotoProfile = function () {
         var id = "_id";
-        this.router.navigate(['/profile', this.currentUser[id]]);
+        this.router.navigate(['/template/profile', this.currentUser[id]]);
     };
     return UsersComponent;
 }());

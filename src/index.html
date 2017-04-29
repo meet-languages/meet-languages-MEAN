@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/styleIndex.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -13,12 +14,20 @@
 
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
-
+    <script src="//cdn.auth0.com/js/lock-9.0.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
     <script src="systemjs.config.js"></script>
     <script>
+      System.config({
+        defaultJSEExtensions:true,
+        map: {
+          "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt",
+          "angular2": "node_modules/angular2",
+          "rxjs": "node_modules/rxjs"
+        }
+      })
       System.import('main.js').catch(function(err){ console.error(err); });
     </script>
   </head>

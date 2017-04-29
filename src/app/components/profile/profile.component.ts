@@ -29,6 +29,6 @@ export class ProfileComponent implements OnInit{
 
   gotoEditProfile(): void {
     const id = "_id";
-    this.router.navigate(['/edit-profile', this.user[id]]);
+    this.router.navigate(['/template/edit-profile', this.user[id]]);
   }
 }

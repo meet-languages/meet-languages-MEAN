@@ -2,16 +2,16 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 
-
 // We want to avoid any 'name not found'
 // warnings from TypeScript
 declare var Auth0Lock: any;
 
-@Injectable() // so we can dependency inject it wherever we want
+@Injectable()
 export class AuthService {
 
  // Configure Auth0
   lock = new Auth0Lock('WE1B9tgLAiYURX5SwMNNZbST3suaY6ue', 'meetlanguages.eu.auth0.com', {});
+
 
  login() {
    this.lock.show((error: string, profile: Object, id_token: string) => {
@@ -34,6 +34,5 @@ export class AuthService {
 
  loggedIn(): boolean {
   return tokenNotExpired();
-    }
-
+}
 }

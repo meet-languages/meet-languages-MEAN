@@ -36,7 +36,7 @@ var AuthService = (function () {
     return AuthService;
 }());
 AuthService = __decorate([
-    core_1.Injectable() // so we can dependency inject it wherever we want
+    core_1.Injectable()
 ], AuthService);
 exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map
